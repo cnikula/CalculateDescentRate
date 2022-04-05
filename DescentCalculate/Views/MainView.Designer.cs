@@ -41,9 +41,9 @@
             this.txtPitchAngle = new Krypton.Toolkit.KryptonTextBox();
             this.lblDistance = new Krypton.Toolkit.KryptonLabel();
             this.txtTravle = new Krypton.Toolkit.KryptonTextBox();
-            this.butCalDescendOnly = new Krypton.Toolkit.KryptonButton();
+            this.btnCalDescendOnly = new Krypton.Toolkit.KryptonButton();
             this.lblDescendOnlyResult = new Krypton.Toolkit.KryptonLabel();
-            this.bntDescentAngle = new Krypton.Toolkit.KryptonButton();
+            this.btnDescentAngle = new Krypton.Toolkit.KryptonButton();
             this.labAltitudeFrom = new Krypton.Toolkit.KryptonLabel();
             this.labAltitudeTo = new Krypton.Toolkit.KryptonLabel();
             this.labDescendSpeed = new Krypton.Toolkit.KryptonLabel();
@@ -51,6 +51,8 @@
             this.labDescendIn = new Krypton.Toolkit.KryptonLabel();
             this.rbCalcDescendRate = new Krypton.Toolkit.KryptonRadioButton();
             this.rbCalcDescendOnly = new Krypton.Toolkit.KryptonRadioButton();
+            this.btnCalculateDescentAngle = new Krypton.Toolkit.KryptonButton();
+            this.rbCalcDescendAngle = new Krypton.Toolkit.KryptonRadioButton();
             this.SuspendLayout();
             // 
             // txtDescndFrom
@@ -201,14 +203,14 @@
             this.txtTravle.ToolTipValues.ToolTipPosition.PlacementMode = Krypton.Toolkit.PlacementMode.Right;
             this.txtTravle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTravle_KeyPress);
             // 
-            // butCalDescendOnly
+            // btnCalDescendOnly
             // 
-            this.butCalDescendOnly.Location = new System.Drawing.Point(69, 332);
-            this.butCalDescendOnly.Name = "butCalDescendOnly";
-            this.butCalDescendOnly.Size = new System.Drawing.Size(150, 25);
-            this.butCalDescendOnly.TabIndex = 15;
-            this.butCalDescendOnly.Values.Text = "Calculate Descend Only";
-            this.butCalDescendOnly.Click += new System.EventHandler(this.butCalDescendOnly_Click);
+            this.btnCalDescendOnly.Location = new System.Drawing.Point(69, 332);
+            this.btnCalDescendOnly.Name = "btnCalDescendOnly";
+            this.btnCalDescendOnly.Size = new System.Drawing.Size(150, 25);
+            this.btnCalDescendOnly.TabIndex = 15;
+            this.btnCalDescendOnly.Values.Text = "Calculate Descend Only";
+            this.btnCalDescendOnly.Click += new System.EventHandler(this.butCalDescendOnly_Click);
             // 
             // lblDescendOnlyResult
             // 
@@ -221,14 +223,14 @@
             this.lblDescendOnlyResult.TabIndex = 16;
             this.lblDescendOnlyResult.Values.Text = "You need to descend {100} feet per nautical mile.";
             // 
-            // bntDescentAngle
+            // btnDescentAngle
             // 
-            this.bntDescentAngle.Location = new System.Drawing.Point(290, 332);
-            this.bntDescentAngle.Name = "bntDescentAngle";
-            this.bntDescentAngle.Size = new System.Drawing.Size(222, 25);
-            this.bntDescentAngle.TabIndex = 17;
-            this.bntDescentAngle.Values.Text = "Calculate Descend Rate (Angle/Speed)\r\n";
-            this.bntDescentAngle.Click += new System.EventHandler(this.bntDescentAngle_Click);
+            this.btnDescentAngle.Location = new System.Drawing.Point(290, 332);
+            this.btnDescentAngle.Name = "btnDescentAngle";
+            this.btnDescentAngle.Size = new System.Drawing.Size(222, 25);
+            this.btnDescentAngle.TabIndex = 17;
+            this.btnDescentAngle.Values.Text = "Calculate Descend Rate (Speed)\r\n";
+            this.btnDescentAngle.Click += new System.EventHandler(this.bntDescentAngle_Click);
             // 
             // labAltitudeFrom
             // 
@@ -295,11 +297,32 @@
             this.rbCalcDescendOnly.Values.Text = "";
             this.rbCalcDescendOnly.Click += new System.EventHandler(this.rbCheckedChanged);
             // 
+            // btnCalculateDescentAngle
+            // 
+            this.btnCalculateDescentAngle.Location = new System.Drawing.Point(610, 332);
+            this.btnCalculateDescentAngle.Name = "btnCalculateDescentAngle";
+            this.btnCalculateDescentAngle.Size = new System.Drawing.Size(222, 25);
+            this.btnCalculateDescentAngle.TabIndex = 27;
+            this.btnCalculateDescentAngle.Values.Text = "Calculate Descend Angle";
+            this.btnCalculateDescentAngle.Click += new System.EventHandler(this.btnCalculateDescentAngle_Click);
+            // 
+            // rbCalcDescendAngle
+            // 
+            this.rbCalcDescendAngle.CheckPosition = Krypton.Toolkit.VisualOrientation.Right;
+            this.rbCalcDescendAngle.Location = new System.Drawing.Point(579, 338);
+            this.rbCalcDescendAngle.Name = "rbCalcDescendAngle";
+            this.rbCalcDescendAngle.Size = new System.Drawing.Size(18, 12);
+            this.rbCalcDescendAngle.TabIndex = 28;
+            this.rbCalcDescendAngle.Values.Text = "";
+            this.rbCalcDescendAngle.Click += new System.EventHandler(this.rbCheckedChanged);
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(877, 522);
+            this.Controls.Add(this.rbCalcDescendAngle);
+            this.Controls.Add(this.btnCalculateDescentAngle);
             this.Controls.Add(this.rbCalcDescendOnly);
             this.Controls.Add(this.rbCalcDescendRate);
             this.Controls.Add(this.labDescendIn);
@@ -307,9 +330,9 @@
             this.Controls.Add(this.labDescendSpeed);
             this.Controls.Add(this.labAltitudeTo);
             this.Controls.Add(this.labAltitudeFrom);
-            this.Controls.Add(this.bntDescentAngle);
+            this.Controls.Add(this.btnDescentAngle);
             this.Controls.Add(this.lblDescendOnlyResult);
-            this.Controls.Add(this.butCalDescendOnly);
+            this.Controls.Add(this.btnCalDescendOnly);
             this.Controls.Add(this.txtTravle);
             this.Controls.Add(this.lblDistance);
             this.Controls.Add(this.txtPitchAngle);
@@ -346,9 +369,9 @@
         private Krypton.Toolkit.KryptonTextBox txtPitchAngle;
         private Krypton.Toolkit.KryptonLabel lblDistance;
         private Krypton.Toolkit.KryptonTextBox txtTravle;
-        private Krypton.Toolkit.KryptonButton butCalDescendOnly;
+        private Krypton.Toolkit.KryptonButton btnCalDescendOnly;
         private Krypton.Toolkit.KryptonLabel lblDescendOnlyResult;
-        private Krypton.Toolkit.KryptonButton bntDescentAngle;
+        private Krypton.Toolkit.KryptonButton btnDescentAngle;
         private Krypton.Toolkit.KryptonLabel labAltitudeFrom;
         private Krypton.Toolkit.KryptonLabel labAltitudeTo;
         private Krypton.Toolkit.KryptonLabel labDescendSpeed;
@@ -356,5 +379,7 @@
         private Krypton.Toolkit.KryptonLabel labDescendIn;
         private Krypton.Toolkit.KryptonRadioButton rbCalcDescendRate;
         private Krypton.Toolkit.KryptonRadioButton rbCalcDescendOnly;
+        private Krypton.Toolkit.KryptonButton btnCalculateDescentAngle;
+        private Krypton.Toolkit.KryptonRadioButton rbCalcDescendAngle;
     }
 }

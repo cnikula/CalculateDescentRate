@@ -1,9 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿// ***********************************************************************
+// Assembly         : DescentCalculate
+// Author           : Claude
+// Created          : 03-18-2022
+//
+// Last Modified By : Claude
+// Last Modified On : 03-26-2022
+// ***********************************************************************
+// <copyright file="DescneInfoModle.cs" company="Mesquite Information Technologies LLC">
+//     2022
+// </copyright>
+// <summary>Data Model</summary>
+// ***********************************************************************
 namespace DescentCalculate.Models
 {
     public class DescneInfoModle

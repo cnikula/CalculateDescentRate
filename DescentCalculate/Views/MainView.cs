@@ -11,22 +11,16 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+
 using DescentCalculate.Common;
-using Krypton.Toolkit;
 using DescentCalculate.Views.Interface;
 using DescentCalculate.Presenters;
 
 namespace DescentCalculate.Views
 {
+    /// <summary>Class MainView.
+    /// Implements the <see cref="System.Windows.Forms.Form" />
+    /// Implements the <see cref="DescentCalculate.Views.Interface.IMainView" /></summary>
     public partial class MainView : Form, IMainView
     {
         #region IMainView properties
@@ -110,11 +104,17 @@ namespace DescentCalculate.Views
             }
         }
 
-       
+
 
         #endregion
 
 
+        /// <summary>
+        ///   <para>
+        /// Initializes a new instance of the <see cref="T:DescentCalculate.Views.MainView" /> class.
+        /// </para>
+        ///   <para>Initialize</para>
+        /// </summary>
         public MainView()
         {
             InitializeComponent();
@@ -144,8 +144,9 @@ namespace DescentCalculate.Views
             lblDescendOnlyResult.Text = "";
             rbCalcDescendOnly.Checked = true;
 
-            bntDescentAngle.Enabled = false;
-            butCalDescendOnly.Enabled = true;
+            btnDescentAngle.Enabled = false;
+            btnCalDescendOnly.Enabled = true;
+            btnCalculateDescentAngle .Enabled = false;
 
         }
 
@@ -186,8 +187,17 @@ namespace DescentCalculate.Views
             mainViewPresenter.CalculateDescendOnly();
         }
 
+        private void bntDescentAngle_Click(object sender, EventArgs e)
+        {
+            MainViewPresenter mainViewPresenter = new MainViewPresenter(this);
+            mainViewPresenter.CalculateDescendRate();
+        }
 
-        #endregion
+        private void btnCalculateDescentAngle_Click(object sender, EventArgs e)
+        {
+            MainViewPresenter mainViewPresenter = new MainViewPresenter(this);
+            mainViewPresenter.CalculateDescentAngle();
+        }
 
         /// <summary>
         ///   <para>
@@ -237,14 +247,16 @@ namespace DescentCalculate.Views
                 txtSpeed.Enabled = false;
                 txtTravle.Enabled = true;
 
+
                 txtDescndFrom.Focus();
                 txtDescndFrom.SelectAll();
 
-                bntDescentAngle.Enabled = false;
-                butCalDescendOnly.Enabled = true;
+                btnCalDescendOnly.Enabled = true;
+                btnDescentAngle.Enabled = false;
+                btnCalculateDescentAngle.Enabled = false;
 
             }
-            else
+            else if(rbCalcDescendRate.Checked)
             {
                 txtDescndFrom.Enabled = false;
                 txtDescndTo.Enabled = false;
@@ -255,18 +267,34 @@ namespace DescentCalculate.Views
                 txtSpeed.Focus();
                 txtSpeed.SelectAll();
 
-                bntDescentAngle.Enabled = true;
-                butCalDescendOnly.Enabled = false;
+                btnCalDescendOnly.Enabled = false;
+                btnDescentAngle.Enabled = true;
+                btnCalculateDescentAngle.Enabled = false;
+
+            } else if (rbCalcDescendAngle.Checked)
+            {
+                txtDescndFrom.Enabled = true;
+                txtDescndTo.Enabled = true;
+                txtPitchAngle.Enabled = false;
+                txtSpeed.Enabled = false;
+                txtTravle.Enabled = true;
+
+                txtDescndFrom.Focus();
+                txtDescndFrom.SelectAll();
+
+                btnCalDescendOnly.Enabled = false;
+                btnDescentAngle.Enabled = false;
+                btnCalculateDescentAngle.Enabled = true;
+
             }
 
-            
-            
+            lblDescendOnlyResult.Text = string.Empty;
+
         }
 
-        private void bntDescentAngle_Click(object sender, EventArgs e)
-        {
-            MainViewPresenter mainViewPresenter = new MainViewPresenter(this);
-            mainViewPresenter.CalculateDescendAngle();
-        }
+
+        #endregion
+
+        
     }
 }
