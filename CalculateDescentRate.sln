@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.32126.317
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DescentCalculate", "DescentCalculate\DescentCalculate.csproj", "{C090C57D-D795-472F-9537-9349BF2AD86B}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupDescentCalculater", "SetupDescentCalculater\SetupDescentCalculater.vdproj", "{5D7798F8-F375-4510-9B2B-5DEFF0508C01}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{C090C57D-D795-472F-9537-9349BF2AD86B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C090C57D-D795-472F-9537-9349BF2AD86B}.Release|x86.ActiveCfg = Release|Any CPU
 		{C090C57D-D795-472F-9537-9349BF2AD86B}.Release|x86.Build.0 = Release|Any CPU
+		{5D7798F8-F375-4510-9B2B-5DEFF0508C01}.Debug|Any CPU.ActiveCfg = Debug
+		{5D7798F8-F375-4510-9B2B-5DEFF0508C01}.Debug|x86.ActiveCfg = Debug
+		{5D7798F8-F375-4510-9B2B-5DEFF0508C01}.Release|Any CPU.ActiveCfg = Release
+		{5D7798F8-F375-4510-9B2B-5DEFF0508C01}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
